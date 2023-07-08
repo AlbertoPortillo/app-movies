@@ -1,0 +1,32 @@
+p, a, h1, h2, h3, span, label{
+  font-family: "Poppins";
+  color: white;
+}
+.dacodes_light_color{
+  background-color:#5141EA;
+}
+.dacodes_dark_color{
+   background-color: #03067B;
+}
+.text_white_color{
+  color: white;
+}
+.text-header{
+  line-height: 54px;
+  font-weight: 700;
+}
+.text-normal{
+  line-height: 40px;
+  font-weight: 400;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+#root{
+  display: contents;
+}
+body{
+  background-color: #03067B;
+
+}

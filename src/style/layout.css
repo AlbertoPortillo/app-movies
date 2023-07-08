@@ -1,0 +1,63 @@
+.layout-main{
+    height: 100%;
+}
+.header{
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.header-dacodes-side{
+    width: 50%;
+    text-align: left;
+    margin-left: 5%;
+}
+.header-dacodes-side img{
+    width: 172px;
+    height: 68px;
+}
+.header-userIcon-side{
+    width: 50%;
+    text-align: right;
+    margin-right: 5%;
+}
+.header-userIcon-side img{
+    width: 62px;
+    height: 62px;
+}
+.bottom {
+    background-image: url("./imgs/bottom.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    padding: 5% 0 0 0;
+}
+.bottom-long-text{
+    width: 65%;
+    text-align: left;
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 400;
+    margin-left: 5%;
+}
+.bottom-header-text{
+    font-size: 45px;
+    line-height: 54px;
+    font-weight: 700;
+    width: 90%;
+    margin: 5% 0 5% 5%;
+    text-align: left;
+}
+.bottom-imgs{
+    width: 90%;
+    padding: 5% 5%;
+    text-align: left;
+}
+.bottom-imgs img{
+    margin: 0 1%;
+    vertical-align: middle;
+    width: 10%;
+}
+    
