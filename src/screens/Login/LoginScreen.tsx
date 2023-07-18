@@ -9,7 +9,7 @@ export const LoginScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  function onClick(e: any){
+  function onClick(e:React.MouseEvent<HTMLElement>){
     console.log("click")
   }
 

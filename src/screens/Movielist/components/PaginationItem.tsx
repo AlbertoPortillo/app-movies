@@ -2,7 +2,7 @@ import React from 'react'
 
 interface paginationclass{
     name: string,
-    click: any
+    click: (e: React.MouseEvent<HTMLElement>) => void
 }
 export default function PaginationItem({name, click}: paginationclass) {
   return (

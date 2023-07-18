@@ -3,7 +3,7 @@ interface inputtype{
     type: string,
     name: string,
     value: string,
-    change: any,
+    change: (e: string) => void,
     textLabel?: string
 }
 export const InputLogin = ({ name, value, change, type, textLabel }:inputtype) => {
