@@ -2,15 +2,13 @@ import React from 'react'
 import './style/App.css';
 import { LayoutMain } from './layout/LayoutMain'
 
-import { LoginScreen } from './screens/Login/LoginScreen'
-import { MovieScreen } from './screens/Movielist/MovieScreen';
+import { RouterApp } from './routes/Router';
 
 function App() {
 
   return (
     <LayoutMain>
-      {/* <LoginScreen/> */}
-      <MovieScreen/>
+      <RouterApp />
     </LayoutMain>
   )
 }

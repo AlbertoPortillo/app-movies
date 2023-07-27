@@ -1,16 +1,32 @@
 import React, {useState} from 'react';
 import "../../style/login.css";
+import { useNavigate } from 'react-router-dom';
 
 import { InputLogin } from './components/InputLogin';
 import CheckLogin from './components/CheckLogin';
 import ButtomLogin from './components/ButtomLogin';
 
+import { getMovieGuestSession } from '../../api/movieApi';
+
 export const LoginScreen = () => {
+  const navigate = useNavigate()
+
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  function onClick(e:React.MouseEvent<HTMLElement>){
-    console.log("click")
+  async function onClick(e:React.MouseEvent<HTMLElement>){
+    const user = await getMovieGuestSession()
+    if(user.guest_session_id){
+      setTimeout(() => {
+        navigate('/movies',{state: {
+          token: user.guest_session_id,
+          username: username,
+          expires_at: user.expires_at
+        }})
+      });
+      sessionStorage.setItem("token", user?.guest_session_id);
+    }
+
   }
 
   return (
