@@ -1,7 +1,4 @@
 import React from 'react';
-export interface movieScreen {
-
-}
 export interface movieItem {
     original_title: string
     poster_path: string
@@ -19,12 +16,15 @@ export interface movieBox {
     overview: string
     genre_ids: Array<number>
     key: number
+    generos: generoItem[]
+
 }
 export interface movieList {
     movies: Array<movieItem>
     pageNow: number
     changePage: (value: number) => void
     maxpages: number
+    generos: generoItem[]
 }
 export interface ratingItem{
     rating: Array<{id:string, value:boolean}>
@@ -42,4 +42,8 @@ export interface paginationclass{
     page: number,
     onclick: (value: number) => void
     pagestotal: number
+}
+export interface generoItem{
+    id: number
+    name:string
 }

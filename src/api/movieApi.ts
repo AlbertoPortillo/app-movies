@@ -1,4 +1,5 @@
 import { accessTokenMovieDB } from "../config/enviroment";
+import { generoItem } from "../types/movietypes";
 import axios from 'axios';
 const api = axios.create({
     baseURL: "https://api.themoviedb.org/3",
@@ -55,4 +56,9 @@ export async function getMovieUpcoming(__page:number){
         }
     })
     return movies.data;
+}
+
+export async function getGeneros(){
+   const generos = await api.get("/genre/movie/list")
+   return generos?.data?.genres;
 }

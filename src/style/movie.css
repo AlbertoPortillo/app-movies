@@ -31,9 +31,7 @@
 .category-item.unselected{
     background-image: url('./imgs/boton.svg');
 }
-.movie-list-list{
 
-}
 .movie-item-body{
     width: 18%;
     height: 29rem;
@@ -51,16 +49,39 @@
 .movie-item-texts{
     visibility: hidden;
     display: grid;
-    height: 98%;
+    height: 86%;
     overflow: hidden;
     padding: 3% 1% 0 5%;
     width: 100%;
     background-color: rgba(81, 65, 234, .6);
     border-radius: 45px;
+    padding: 10%;
+}
+.movie-item-description{
+    text-align: left;
+    font-size: .8rem;
+    text-overflow: ellipsis;
+    max-height: 10rem;
+    overflow: hidden;
 }
 
 .movie-item-texts::-webkit-scrollbar{
     display: none;
+}
+
+.movie-item-tittle{
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.movie-item-header{
+    font-size: .8rem;
+    display: inline-flex;
+    width: 100%;
+}
+
+.movie-item-rating-stars{
+    width: 15%;
 }
 .pagination-body{
     width: 30%;
@@ -78,7 +99,6 @@
     height: 3rem;
     background-color: #5141EA;
     border-radius: 50px;
-
 }
 .pagination-flecha-siguiente{
     width: 10%;

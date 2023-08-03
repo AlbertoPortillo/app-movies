@@ -13,8 +13,12 @@ export const LoginScreen = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [terms, setTerms] = useState(false)
 
-  async function onClick(e:React.MouseEvent<HTMLElement>){
+  async function onClick(){
+    if(!username) return alert('Introduzca un usuario')
+    if(!password) return alert('Introduzca una contraseña')
+    if(!terms) return alert('Acepte los terminos y condiciones')
     const user = await getMovieGuestSession()
     if(user.guest_session_id){
       setTimeout(() => {
@@ -29,14 +33,18 @@ export const LoginScreen = () => {
 
   }
 
+  const onChangeTerms = () => {
+    setTerms(!terms)
+  }
+
   return (
     <div className='login-body'>
       <h1 className='login-body-head text-header'>Login</h1>
       <p className='login-body-welcome text-normal'>¡Bienvenido!</p>
       <InputLogin type="text" name="username" value={username} change={setUsername} textLabel='Correo electronico de Dacodes' />
       <InputLogin type="text" name="password" value={password} change={setPassword} textLabel='Contraseña' />
-      <CheckLogin />
-      <ButtomLogin click={onClick} />
+      <CheckLogin onclickCheck={onChangeTerms}  />
+      <ButtomLogin click={onClick} disabled={!username || !password || !terms ?true :false} />
     </div>
   )
 }

@@ -2,6 +2,7 @@
     width: 90%;
     margin-bottom: 10%;
     padding: 5% 5%;
+    text-align: left;
 }
 .login-body-head{
     text-align: left;
@@ -48,15 +49,22 @@
     font-size: 20px;
 }
 .login-buttom-body{
-    width: 15%;
-    height: 2.6rem;
     background-image: url('./imgs/boton.svg');
+    width: 15%;
+    height: 4.6rem;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 25px;
+    border-radius: 40px;
     cursor: pointer;
     font-size: 30px;
     text-align: center; 
     padding: 1%;
     font-weight: 700;
+    color: white;
+}
+.login-buttom-body:disabled{
+    /* background-color: #5141EA; */
+    /* background-image: none; */
+    color: gray;
+    filter:invert(1);
 }

@@ -7,7 +7,7 @@ export default function RatingItem({rating}:ratingItem) {
     <div>
         {
             rating.map(({id, value}) => {
-                return <img key={id} src={value ?__star_img_fill :__star_img_empty} />
+                return <img key={id} className='movie-item-rating-stars' src={value ?__star_img_fill :__star_img_empty} />
             })
         }
     </div>

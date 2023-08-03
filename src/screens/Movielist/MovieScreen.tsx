@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import '../../style/movie.css';
 
-import { getMovieNowPlaying, getMoviePopular, getMovieTopRated, getMovieUpcoming } from '../../api/movieApi'
+import { getMovieNowPlaying, getMoviePopular, getMovieTopRated, getMovieUpcoming, getGeneros } from '../../api/movieApi'
 
 import MovieList from './components/MovieList'
 import CategoryButtons from './components/CategoryButtons'
@@ -11,8 +11,9 @@ export const MovieScreen = () => {
   
   const [pages, setPages] = React.useState(1)
   const [actualPages, setActualPages] = React.useState(1)
-  const [catSelected, setCatSelected] = React.useState(2)
+  const [catSelected, setCatSelected] = React.useState(1)
   const [movies, setMovies]= React.useState([])
+  const [generos, setGeneros] = React.useState([])
   const category = [
     {name: "Now Playing", value: 1},
     {name: "Popular", value: 2},
@@ -21,8 +22,15 @@ export const MovieScreen = () => {
   ]
 
   useEffect(() => {
+    settingGeneros()
+  }, [])
+  
+  useEffect(() => {
     getMovies()
   }, [actualPages, catSelected])
+
+
+  
   
 
   async function getMovies(){
@@ -56,6 +64,11 @@ export const MovieScreen = () => {
     }
   }
 
+  async function settingGeneros(){
+    const __generos= await getGeneros()
+    return setGeneros(__generos)
+  }
+
   async function selectedCategory(value: number){
     setActualPages(1)
     return setCatSelected(value)
@@ -78,7 +91,7 @@ export const MovieScreen = () => {
       <div className='movie-header'>
         <p>{category[catSelected-1].name}</p>
       </div>
-      <MovieList movies={movies} pageNow={actualPages} maxpages={pages} changePage={setPagination} />
+      <MovieList generos={generos} movies={movies} pageNow={actualPages} maxpages={pages} changePage={setPagination} />
     </div>
   )
 }
