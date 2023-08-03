@@ -1,4 +1,3 @@
-import React from 'react';
 export interface movieItem {
     original_title: string
     poster_path: string

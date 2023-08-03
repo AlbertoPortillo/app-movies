@@ -1,4 +1,3 @@
-import React from 'react'
 import { paginationclass } from '../../../types/movietypes'
 import __flecha_atras from '../../../style/imgs/flecha-atras.png'
 import __flecha_siguiente from '../../../style/imgs/flecha-despues.png'

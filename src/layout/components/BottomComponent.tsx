@@ -1,4 +1,3 @@
-import React from 'react'
 import __bptc_icon from '../../style/imgs/bptc_logo.png';
 import __gptw_icon from '../../style/imgs/gptw_logo.png';
 import __efi_icon from '../../style/imgs/efy_logo.png';

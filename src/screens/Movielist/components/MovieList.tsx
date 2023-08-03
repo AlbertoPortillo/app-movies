@@ -1,4 +1,3 @@
-import React from 'react'
 import { movieList } from '../../../types/movietypes'
 import MovieItem from './MovieItem'
 import PaginationItem from './PaginationItem'

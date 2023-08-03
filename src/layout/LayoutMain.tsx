@@ -1,4 +1,3 @@
-import React from 'react'
 import "../style/layout.css";
 import HeadComponent from './components/HeadComponent';
 import BottomComponent from './components/BottomComponent';

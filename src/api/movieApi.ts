@@ -1,5 +1,4 @@
 import { accessTokenMovieDB } from "../config/enviroment";
-import { generoItem } from "../types/movietypes";
 import axios from 'axios';
 const api = axios.create({
     baseURL: "https://api.themoviedb.org/3",

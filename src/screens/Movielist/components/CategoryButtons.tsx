@@ -1,4 +1,3 @@
-import React from 'react'
 import { categoryItem } from '../../../types/movietypes'
 export default function CategoryButtons({onClick, categories, selected}:categoryItem) {
   return (

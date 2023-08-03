@@ -1,4 +1,3 @@
-import React from 'react'
 import { ratingItem } from '../../../types/movietypes'
 import __star_img_fill from '../../../style/imgs/star-rellenado.png'
 import __star_img_empty from '../../../style/imgs/star-vacio.png'
