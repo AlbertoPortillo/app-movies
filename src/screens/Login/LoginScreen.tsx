@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import "../../style/login.css";
 import { useNavigate } from 'react-router-dom';
 
@@ -14,11 +14,28 @@ export const LoginScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [terms, setTerms] = useState(false)
+  const [submit, setSubmit] = useState({
+    "password": false,
+    "username": false,
+    "checkbox": false
+  })
+  
+  useEffect(() => {
+    validateForm()
+  }, [username, password, terms ])
+  
+  function validateForm(){
+    let regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+    var testing =  regex.test(username)    
+    setSubmit({...submit, 
+      username: testing, 
+      password: 7 <= password.length, 
+      checkbox: terms
+    })
+
+  }
 
   async function onClick(){
-    if(!username) return alert('Introduzca un usuario')
-    if(!password) return alert('Introduzca una contraseña')
-    if(!terms) return alert('Acepte los terminos y condiciones')
     const user = await getMovieGuestSession()
     if(user.guest_session_id){
       setTimeout(() => {
@@ -44,7 +61,7 @@ export const LoginScreen = () => {
       <InputLogin type="text" name="username" value={username} change={setUsername} textLabel='Correo electronico de Dacodes' />
       <InputLogin type="text" name="password" value={password} change={setPassword} textLabel='Contraseña' />
       <CheckLogin onclickCheck={onChangeTerms}  />
-      <ButtomLogin click={onClick} disabled={!username || !password || !terms ?true :false} />
+      <ButtomLogin click={onClick} disabled={!submit.password || !submit.checkbox || !submit.username} />
     </div>
   )
 }

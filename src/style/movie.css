@@ -106,4 +106,7 @@
     background-color: #5141EA;
     border-radius: 50px;
 }
+.flecha-disabled{
+    filter:hue-rotate(150deg);
+}
 

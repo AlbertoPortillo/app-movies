@@ -29,10 +29,6 @@ export const MovieScreen = () => {
     getMovies()
   }, [actualPages, catSelected])
 
-
-  
-  
-
   async function getMovies(){
     if(catSelected == 1){
       const moviesDB = await getMovieNowPlaying(actualPages);
@@ -76,13 +72,13 @@ export const MovieScreen = () => {
 
   async function setPagination(value:number){
     if(value == 1){
+      if(actualPages == pages)return;
       if(actualPages == 500)return;
       setActualPages(actualPages + 1)
     }else{
       if(actualPages == 1)return;
       setActualPages(actualPages - 1)
     }
-    window.scrollTo(0, 0)
   }
 
   return (
